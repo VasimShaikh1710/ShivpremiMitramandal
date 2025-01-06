@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% block title %}मुख्य पृष्ठ | शिवप्रेमी मित्र मंडळ{% endblock %}
+
+{% load static %} 
+
+{% block content %}
+    <style>
+        .hero {
+            background-image: url("{% static 'images/chatrapati5.jpg' %}");
+            background-size: cover;  /* Image ko cover karne ke liye */
+            background-position: center;  /* Image ko center mein rakhne ke liye */
+            color: white;  /* Text color set karna, taki background par text visible ho */
+            padding: 100px 0;  /* Hero section ka padding */
+            text-align: center;  /* Text ko center mein align karna */
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .hero a {
+            background-color: #ff6600;  /* Button color */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .hero a:hover {
+            background-color: #e55a00;
+        }
+
+        .card {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .card-item {
+            display: block;
+            text-decoration: none;
+            color: black; /* Text color */
+            border: 1px solid #ccc;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .card-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-item h3 {
+            margin-top: 0.5rem;
+        }
+
+        .card-item p {
+            margin-top: 0.5rem;
+        }
+
+        .about img {
+            width: 100%; /* Image ko full width mein dikhana */
+            max-width: 500px; /* Image ka maximum width */
+            height: auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .grid-item {
+            text-align: center;
+        }
+
+        .grid-item img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <section class="hero">
+        <h1>शिवप्रेमी मित्र मंडळात स्वागत आहे</h1>
+        <p>शिवाच्या भक्तीसाठी आणि एकतेसाठी आम्ही एकत्र आलो आहोत.</p>
+        <a href="#services">अधिक जाणून घ्या</a>
+    </section>
+
+    <section class="services" id="services">
+        <h2>उत्सव</h2>
+        <div class="card">
+            <a href="/ganeshutsav" class="card-item">
+                <i class="fas fa-om"></i>
+                <h3>गणेश उत्सव</h3>
+                <p>गणेश उत्सव दरवर्षी मोठ्या धूमधडाक्यात साजरा केला जातो. गणेश भगवानाचे व्रत आणि पूजा करण्यासाठी उत्साही सदस्य एकत्र येतात.</p>
+            </a>
+            <a href="/shivjayanti" class="card-item">
+                <span style="font-size: 2rem;">🚩</span> <!-- Triangle Flag Emoji -->
+                <h3>शिवजयंती</h3>
+                <p>शिवजयंती हा एक महत्वपूर्ण उत्सव आहे ज्यामध्ये शिवाजी महाराजांच्या जीवनावर चर्चा केली जाते आणि त्यांचे कृत्यं अभिमानाने साजरे केले जातात.</p>
+            </a>
+            <a href="/navratri" class="card-item">
+                <i class="fas fa-gem"></i>
+                <h3>नवरात्र</h3>
+                <p>नवरात्र हा देवी दुर्गेच्या पूजा आणि उपास्याचा काल आहे. प्रत्येक वर्षी नवरात्रात विविध धार्मिक कार्यक्रम आयोजित केले जातात.</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>आमच्या सेवा</h2>
+        <div class="card">
+            <div class="card-item">
+                <i class="fas fa-praying-hands"></i>
+                <h3>दैनिक आरती</h3>
+                <p>आमच्या दैनिक आरती वेळापत्रकाचा अनुभव घ्या.</p>
+            </div>
+            <div class="card-item">
+                <i class="fas fa-music"></i>
+                <h3>सांस्कृतिक कार्यक्रम</h3>
+                <p>संगीत, नृत्य, आणि नाटकांचा आनंद घ्या.</p>
+            </div>
+            <div class="card-item">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>सामाजिक कार्य</h3>
+                <p>आमच्या सामुदायिक सेवा उपक्रमांमध्ये सहभागी व्हा.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>आमच्याबद्दल</h2>
+        <div class="content">
+            <img src="{% static 'images/chatrapati2.jpg' %}" alt="आमच्याबद्दल">
+            <p style="font-size: 1.4rem; font-weight: bold; color: #333; line-height: 1.8; text-align: justify;">१९९० मध्ये स्थापन झालेले, <span style="color: #ff6600; font-size: 1.6rem; font-weight: bolder;">शिवप्रेमी मित्र मंडळ</span> शिवभक्ती आणि आनंद पसरवण्यास कटिबद्ध आहे. शिवजयंती उत्सवापासून समाजसेवेपर्यंत, प्रत्येक वर्ष स्मरणीय करण्यासाठी आम्ही कार्य करतो. <span style="font-style: italic; color: #e55a00;">आमचे उद्दीष्ट लोकांच्या जीवनात आनंद आणणे आणि समाजाच्या भल्यासाठी कार्य करणे आहे.</span></p>
+        </div>
+    </section>
+
+    <section class="members" id="members">
+        <h2>आमचे सदस्य</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/100" alt="सदस्य १">
+                <h3>राहुल शर्मा</h3>
+                <p>अध्यक्ष</p>
+            </div>
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/100" alt="सदस्य २">
+                <h3>अंजली मेहता</h3>
+                <p>उपाध्यक्ष</p>
+            </div>
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/100" alt="सदस्य ३">
+                <h3>रवि देसाई</h3>
+                <p>सचिव</p>
+            </div>
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/100" alt="सदस्य ४">
+                <h3>प्रिया सिंग</h3>
+                <p>खजिनदार</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

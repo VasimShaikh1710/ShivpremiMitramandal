@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}शिवप्रेमी मित्र मंडळ{% endblock %}</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Marcellus', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #ff7f00, #ff9900); /* Orange Gradient */
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            background-color: #ff7f00; /* Orange background */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 2rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .hero a {
+            background: #ff7f00; /* Orange */
+            color: #fff;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .hero a:hover {
+            background: #ff9900; /* Lighter Orange */
+        }
+        .services {
+            padding: 3rem 2rem;
+            background: #f9f9f9;
+        }
+        .services h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        .services .card {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .services .card-item {
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            width: 300px;
+        }
+        .services .card-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ff7f00; /* Orange */
+        }
+        .services .card-item h3 {
+            margin-bottom: 1rem;
+        }
+        .about {
+            padding: 3rem 2rem;
+            background: #fff;
+        }
+        .about h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        .about .content {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .about img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .about p {
+            flex: 1;
+        }
+        .members {
+            padding: 3rem 2rem;
+            background: #f9f9f9;
+        }
+        .members h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        .members .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .members .grid-item {
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .members .grid-item img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        .members .grid-item h3 {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        footer ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        footer ul li a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        footer ul li a:hover {
+            color: #ff7f00; /* Orange */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">शिवप्रेमी मित्र मंडळ</div>
+        <nav>
+            <ul>
+                <li><a href="#">मुख्य पृष्ठ</a></li>
+                <li><a href="#services">सेवा</a></li>
+                <li><a href="#about">आमच्याबद्दल</a></li>
+                <li><a href="#members">सदस्य</a></li>
+                <li><a href="#contact">संपर्क</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+        <p>&copy; २०२५ शिवप्रेमी मित्र मंडळ. सर्व हक्क राखीव.</p>
+    </footer>
+</body>
+</html>
