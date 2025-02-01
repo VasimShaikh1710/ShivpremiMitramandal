@@ -1,11 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Ganesh Utsav</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}गणेश उत्सव | शिवप्रेमी मित्र मंडळ{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <style>
+        body {
+            font-family: 'Mangal', sans-serif;
+            background-color: #fff3e0; /* हल्का भगवा बैकग्राउंड */
+        }
+
+        .hero {
+            background: linear-gradient(to right, #000000, #444444); /* Black to Gray gradient */
+            background-image: url("{% static 'images/ganesh.avif' %}"), 
+                              linear-gradient(to right, #000000, #444444); 
+            background-blend-mode: overlay; /* Image + Gradient blending */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 102, 0, 0.5); /* हल्का भगवा ओवरले */
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content {
+            text-align: center;
+            padding: 50px 20px;
+            color: #5d4037; /* Dark Brown */
+            font-size: 1.2rem;
+        }
+
+        .divider {
+            width: 60px;
+            height: 5px;
+            background-color: #ff6600;
+            margin: 10px auto;
+            border-radius: 3px;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .video-item {
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .video-item:hover {
+            transform: scale(1.05);
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border-radius: 10px;
+        }
+
+        .ganesha-icon {
+            font-size: 3rem;
+            color: #ff6600;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+
+    <section class="hero">
+        <h1>गणेश उत्सव</h1>
+        <p>श्री गणेशाच्या भक्तीसाठी आम्ही दरवर्षी भव्य गणेशोत्सव साजरा करतो।</p>
+    </section>
+
+    <section class="content">
+        <h2>गणेश उत्सव विषयी</h2>
+        <div class="divider"></div>
+        <p>गणेश उत्सव हा आमच्या मंडळासाठी अत्यंत पवित्र आणि आनंदाचा उत्सव आहे। दरवर्षी मोठ्या उत्साहाने आम्ही गणेश मूर्तीची स्थापना करतो, भव्य आरती घेतो आणि विविध सांस्कृतिक कार्यक्रम आयोजित करतो।</p>
+    </section>
+
+    <section id="videos">
+        <h2>गणेश उत्सव व्हिडिओ 📽️</h2>
+        <div class="divider"></div>
+        <div class="video-container">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/6k7OJiFGSR0" frameborder="0" allowfullscreen></iframe>
+                <p>गणेशोत्सव 2024</p>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+                <p>भव्य आरती सोहळा</p>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID3" frameborder="0" allowfullscreen></iframe>
+                <p>शोभायात्रा</p>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

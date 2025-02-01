@@ -1,11 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>shivjayanti</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}शिवजयंती | शिवप्रेमी मित्र मंडळ{% endblock %}
+
+{% load static %}
+
+{% block content %}
+    <style>
+        body {
+            font-family: 'Mangal', sans-serif;
+            background-color: #ffe0b2; /* हल्का भगवा */
+        }
+
+        .hero {
+            background: linear-gradient(to right, #8b0000, #ff6600); /* Dark Red to Saffron gradient */
+            background-image: url("{% static 'images/shivjayanti.jpg' %}"),
+                              linear-gradient(to right, #8b0000, #ff6600); 
+            background-blend-mode: overlay; /* Image + Gradient blending */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 102, 0, 0.5); /* हल्का भगवा ओवरले */
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content {
+            text-align: center;
+            padding: 50px 20px;
+            color: #5d4037; /* Dark Brown */
+            font-size: 1.2rem;
+        }
+
+        .divider {
+            width: 60px;
+            height: 5px;
+            background-color: #ff6600;
+            margin: 10px auto;
+            border-radius: 3px;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .video-item {
+            text-align: center;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .video-item:hover {
+            transform: scale(1.05);
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border-radius: 10px;
+        }
+
+        .shivaji-icon {
+            font-size: 3rem;
+            color: #ff6600;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+
+    <section class="hero">
+        <h1>शिवजयंती</h1>
+        <p>छत्रपती शिवाजी महाराज यांचा जन्मोत्सव आमच्या मंडळात मोठ्या उत्साहात साजरा केला जातो।</p>
+    </section>
+
+    <section class="content">
+        <h2>शिवजयंती विषयी</h2>
+        <div class="divider"></div>
+        <p>शिवजयंती हा फक्त सण नाही, तर आमच्यासाठी प्रेरणादायी दिवस आहे। आम्ही दरवर्षी मोठ्या उत्साहाने महाराजांचा जन्मोत्सव साजरा करतो, मर्दानी खेळ, इतिहासाच्या गाथा आणि शोभायात्रेचे आयोजन करतो।</p>
+    </section>
+
+    <section id="videos">
+        <h2>शिवजयंती व्हिडिओ 📽️</h2>
+        <div class="divider"></div>
+        <div class="video-container">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" frameborder="0" allowfullscreen></iframe>
+                <p>शिवजयंती महोत्सव 2024</p>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+                <p>शिवकालीन युद्धकला</p>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID3" frameborder="0" allowfullscreen></iframe>
+                <p>शिवाजी महाराज इतिहास</p>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

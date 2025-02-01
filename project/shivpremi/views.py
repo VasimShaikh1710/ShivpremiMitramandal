@@ -13,3 +13,9 @@ def shivjayanti(request):
 
 def navratri(request):
     return render(request, 'navratri.html')
+
+import requests
+
+
+def ganeshutsav(request):
+    return render(request, 'ganeshutsav.html')

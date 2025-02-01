@@ -8,17 +8,22 @@
     <style>
         .hero {
             background-image: url("{% static 'images/chatrapati5.jpg' %}");
-            background-size: cover;  /* Image ko cover karne ke liye */
-            background-position: center;  /* Image ko center mein rakhne ke liye */
-            color: white;  /* Text color set karna, taki background par text visible ho */
-            padding: 100px 0;  /* Hero section ka padding */
-            text-align: center;  /* Text ko center mein align karna */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;  /* Left padding बढ़ाने के लिए */
+            text-align: left;  /* Text को left-align करने के लिए */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Content को left-align करने के लिए */
         }
+        
 
         .hero h1 {
-            font-size: 2.5rem;
-            margin: 0;
+            font-size: 4rem; /* Font size बढ़ा दिया */
+            font-weight: bold; /* और गहरा करने के लिए */
         }
+        
 
         .hero p {
             font-size: 1.2rem;
@@ -92,10 +97,15 @@
             width: 100px;
             height: 100px;
         }
+
+        .hero h1, .hero p, .hero a {
+            text-align: left;
+            max-width: 600px; /* Content को थोड़ा संकीर्ण करने के लिए */
+        }
     </style>
 
     <section class="hero">
-        <h1>शिवप्रेमी मित्र मंडळात स्वागत आहे</h1>
+        <h1>शिवप्रेमी मित्र मंडळ</h1>
         <p>शिवाच्या भक्तीसाठी आणि एकतेसाठी आम्ही एकत्र आलो आहोत.</p>
         <a href="#services">अधिक जाणून घ्या</a>
     </section>
